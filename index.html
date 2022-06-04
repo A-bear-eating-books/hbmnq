@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <!-- We only include this to explicitly loosen the CSP of various packager environments. It does not provide any security. -->
   <meta http-equiv="Content-Security-Policy" content="default-src * 'self' 'unsafe-inline' 'unsafe-eval' data: blob:">
-  <title>航班模拟器V0.44</title>
+  <title>[中精0_4]航班模拟器V0</title>
   <style>
     body {
       color: #ffffff;
@@ -16,7 +16,7 @@
       padding: 0;
     }
     :root, body.is-fullscreen {
-      background-color: #70a7ff;
+      background-color: #000000;
     }
     [hidden] {
       display: none !important;
@@ -46,7 +46,7 @@
       cursor: default;
       user-select: none;
       -webkit-user-select: none;
-      background-color: #70a7ff;
+      background-color: #000000;
     }
     #launch {
       background-color: rgba(0, 0, 0, 0.7);
@@ -133,11 +133,11 @@
       cursor: auto;
     }
     .sc-monitor-root[opcode^="data_"] .sc-monitor-value-color {
-      background-color: #ff8c1a !important;
+      background-color: #ff8c1a;
     }
     
   </style>
-  <meta name="theme-color" content="#70a7ff">
+  <meta name="theme-color" content="#000000">
   
 </head>
 <body>
@@ -155,7 +155,7 @@
 
   <div id="loading" class="screen">
     <noscript>Enable JavaScript</noscript>
-    <h1 class="loading-text">加载中-请稍等</h1>
+    <h1 class="loading-text">加载中，请稍后……</h1>
     
     <div class="progress-bar-outer"><div class="progress-bar-inner" id="loading-inner"></div></div>
   </div>
@@ -217,7 +217,7 @@
       scaffolding.setUsername("player####".replace(/#/g, () => Math.floor(Math.random() * 10)));
       scaffolding.setAccentColor("#ff4c4c");
 
-      scaffolding.addCloudProvider(new Scaffolding.Cloud.LocalStorageProvider("cloudvariables:p4-@[求审]航班模拟器V0.44-补丁版.sb3"));
+      scaffolding.addCloudProvider(new Scaffolding.Cloud.WebSocketProvider(["wss://clouddata.turbowarp.org","wss://clouddata.turbowarp.xyz"], "p4-@[中精0_4]航班模拟器V0.49-全面canvas.sb3"));
 
       if (document.fullscreenEnabled || document.webkitFullscreenEnabled) {
         let isFullScreen = !!(document.fullscreenElement || document.webkitFullscreenElement);
@@ -290,7 +290,7 @@
       handleError(e);
     }
   </script>
-  <script></script>
+  
   
     <script>
       const getProjectData = (function() {
@@ -332,7 +332,7 @@
       await scaffolding.loadProject(projectData);
       setProgress(1);
       loadingScreen.hidden = true;
-      if (true) {
+      if (false) {
         scaffolding.start();
       } else {
         launchScreen.hidden = false;
